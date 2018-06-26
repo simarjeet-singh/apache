@@ -1,0 +1,9 @@
+   - name: apache Installation
+     yum: pkg=httpd state=latest
+
+   - name: Copying configuration file to conf directory of apache
+     template:
+       src: httpd.j2
+       dest: /etc/httpd/conf/httpd.conf
+     notify:
+       - restart httpd
