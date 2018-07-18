@@ -3,7 +3,7 @@
 
    - name: Copying configuration file to conf directory of apache
      template:
-       src: httpd.j2
+       src: {{ httpd_conf }}
        dest: /etc/httpd/conf/httpd.conf
      notify:
        - restart httpd
